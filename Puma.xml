@@ -1,34 +1,27 @@
-<ShopOnline>
-<Hamilton>
-<merchandising>
-<nome>Cappello Mercedes Hamilton</nome>
-<prezzo>45€</prezzo>
-<colore>Giallo flourescente</colore>
-<tessuto>Poliestere</tessuto>
-</merchandising>
-<merchandising>
-<nome>Maglia Mercedes Hamilton</nome>
-<prezzo>130€</prezzo>
-<colore>nero con bordi rossi</colore>
-<tessuto>Poliestere</tessuto>
-</merchandising>
-<merchandising>
-<nome>Giacca Mercedes Hamilton</nome>
-<prezzo>170€</prezzo>
-<colore>nero con bordi rossi</colore>
-<tessuto>Poliestere</tessuto>
-</merchandising>
-<merchandising>
-<nome>Bandiera Mercedes Hamilton</nome>
-<prezzo>30€</prezzo>
-<colore>Giallo flourescente</colore>
-<tessuto>Poliestere</tessuto>
-</merchandising>
-<merchandising>
-<nome>Felpa Mercedes Hamilton</nome>
-<prezzo>52€</prezzo>
-<colore>nero con bordi rossi</colore>
-<tessuto>Poliestere</tessuto>
-</merchandising>
-</Hamilton>
-</ShopOnline>
+    <Puma>
+        <merchandising>
+            <nome>Cappello Puma</nome>
+            <prezzo>25€</prezzo>
+            <colore>Rosso</colore>
+        </merchandising>
+        <merchandising>
+            <nome>Maglia Puma</nome>
+            <prezzo>70€</prezzo>
+            <colore>Nero</colore>
+        </merchandising>
+        <merchandising>
+            <nome>Giacca Puma</nome>
+            <prezzo>120€</prezzo>
+            <colore>Bianco</colore>
+        </merchandising>
+        <merchandising>
+            <nome>Bandiera Puma</nome>
+            <prezzo>15€</prezzo>
+            <colore>Blu</colore>
+        </merchandising>
+        <merchandising>
+            <nome>Felpa Puma</nome>
+            <prezzo>45€</prezzo>
+            <colore>Grigio</colore>
+        </merchandising>
+    </Puma>

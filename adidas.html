@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <script>
+        function carica(input) {
+      const reader = new FileReader()
+      const csv = input.files[0]
+	    reader.readAsText(csv)
+       reader.onload = function (e) {
+
+
+	var hTable="";
+
+        var rows = e.target.result.split("\n");
+        for (i=0;i<5;i++) {
+        var elements = rows[i].split(",");
+        hTable += "<tr>";
+        for (j=0;j<4;j++) {
+          hTable += "<td>" + elements[j] + "</td>";
+        }
+        var tipologia = "\""+String(elements[0])+"\"";
+        var prezzo="\""+String(elements[2])+"\"";
+        hTable += "<td><input type= 'button' value = 'aquista' onclick= 'aggiungi("+tipologia+","+prezzo+")'></td></tr>";
+      }
+
+      document.getElementById("cart").getElementsByTagName("tbody")[0].innerHTML = hTable;
+    }
+  }
+
+  function aggiungi(tipologia,prezzo1){
+    var val  = localStorage.getItem("prezzo");
+    if(val==null){
+      localStorage.setItem("prezzo",prezzo1);
+    }
+    else{
+      val=val.split(",");
+      val.push(prezzo1);  
+      localStorage.setItem("prezzo",val);
+    }
+    var val1=localStorage.getItem("tipologia");
+    if(val1==null){
+      localStorage.setItem("tipologia",tipologia);
+    }
+    else{
+      val1=val1.split(",");
+      val1.push(tipologia);  
+      localStorage.setItem("tipologia",val1);
+    }
+}
+
+
+function carrello (){
+  window.open("carrello.html");
+}
+    </script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adidas - Il Tuo E-commerce</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>ADIDAS</h1>
+    </header>
+    <a href="carrello.html">
+      <img src="carrello_logo.png" style="width:100px;height:100px;">
+      </a>
+    <table id="cart">
+        <thead>
+          <tr>
+            <th>Tipologia</th>
+            <th>Colore</th>
+            <th>Prezzo</th>
+            <th>Acquista</th>
+           </tr>
+        </thead>
+        <tbody>
+        </tbody>
+        </table>
+        <input type="file" onchange=carica(this)>
+        <div class="output"></div>
+</body>
+</html>

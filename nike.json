@@ -1,0 +1,27 @@
+[
+    {
+        "tipologia": "Cappello Nike",
+        "prezzo": "38€",
+        "colore": "nero"
+    },
+    {
+        "tipologia": "Felpa Nike",
+        "prezzo": "60€",
+        "colore": "grigio"
+    },
+    {
+        "tipologia": "Maglietta Nike",
+        "prezzo": "50€",
+        "colore": "bianco"
+    },
+    {
+        "tipologia": "Bandiera Nike",
+        "prezzo": "35€",
+        "colore": "rosso"
+    },
+    {
+        "tipologia": "Giacca Nike",
+        "prezzo": "80€",
+        "colore": "blu"
+    }
+]

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <script>
+        fetch('nike.json')
+          .then(response => response.json())
+          .then(json => estrai(json));
+    
+        function estrai(json) {
+          var tb = "";
+          for (i in json) {
+            var tipologia = json[i].tipologia;
+            var colore = json[i].colore;
+            var prezzo = json[i].prezzo;
+            var tessuto = json[i].tessuto;
+            var azione = "<td><input type='button' value='Acquista' onclick='aggiungi(\"" + tipologia + "\", " + prezzo + ")'></td>";
+            tb += "<tr><td>" + tipologia + "</td><td>" + colore + "</td><td>" + prezzo + "</td><td>" + tessuto + "</td>" + azione + "</tr>";
+          }
+          document.getElementById("tabella-body").innerHTML = tb;
+        }
+    
+        function aggiungi(tipologia,prezzo) {
+          var carrello = localStorage.getItem("carrello");
+    
+          if (carrello == null) {
+            carrello = "[]";
+          }
+    
+          var carrelloArray = JSON.parse(carrello);
+    
+          var prodotto = { "tipologia": tipologia, "prezzo": prezzo };
+          carrelloArray.push(prodotto);
+          
+          localStorage.setItem("carrello",JSON.stringify(carrelloArray));
+        }
+    
+        function carrello() {
+          window.open("carrello.html");
+        }
+      </script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nike - Il Tuo E-commerce</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>NIKE</h1>
+    </header>
+    <a href="carrello.html">
+      <img src="carrello_logo.png" style="width:100px;height:100px;">
+      </a>
+    <p id="stampa"></p>
+  <table id="tabella">
+    <thead>
+      <tr>
+        <th>Tipologia</th>
+        <th>Colore</th>
+        <th>Prezzo</th>
+        <th>Tessuto</th>
+        <th>Azione</th>
+      </tr>
+    </thead>
+    <tbody id="tabella-body"></tbody>
+  </table>
+</body>
+
+</html>
